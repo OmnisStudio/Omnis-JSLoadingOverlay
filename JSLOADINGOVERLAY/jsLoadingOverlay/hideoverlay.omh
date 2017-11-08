@@ -1,0 +1,5 @@
+Calculate rowvariable as row(kFalse,iOverLayObj)     ;; hide overlay
+Calculate iShowingOverlay as kFalse
+
+Do $cinst.$objs.Start.$text.$assign('Start')
+Do $cinst.$clientcommand("showloadingoverlay",rowvariable)

@@ -1,0 +1,9 @@
+If iOverLayObj='PagedPane'|iOverLayObj='DataGrid'
+	Calculate iList1 as pRow.C1
+End If
+
+If iOverLayObj='PagedPane'|iOverLayObj='ListControl'
+	Calculate iList2 as pRow.C2
+End If
+
+Do method hideoverlay

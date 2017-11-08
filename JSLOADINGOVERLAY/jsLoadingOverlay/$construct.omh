@@ -1,0 +1,23 @@
+Do method getUsercss Returns lUserCss     ;; paste contents into ../html/css/user.css to use custom loading overlay 'myLoadingOverlay'
+Do method getUsercss2 Returns lUserCss2     ;; paste contents into ../html/css/user.css to use custom loading overlay 'loader2'
+
+Do $objects.oLoadingOverlayTimer.$newref() Returns iTimerObjRef
+Do iTimerObjRef.$timervalue.$assign(3)
+Do iTimerObjRef.$useseconds.$assign(kTrue)
+Do iTimerObjRef.$repeat.$assign(kFalse)
+
+Do iCssClasses.$define(iCssClassname)
+Do iCssClasses.$add('<empty>')
+Do iCssClasses.$add('myLoadingOverlay')
+Do iCssClasses.$add('loader2')
+
+Do iObjects.$define(iObjName)
+Do iObjects.$add('PagedPane')
+Do iObjects.$add('ListControl')
+Do iObjects.$add('DataGrid')
+Do iObjects.$line.$assign(1)
+
+Do iList2.$cols.$add('Col1')
+Do iList2.$add('ListControl')
+
+Do $cinst.$clientcommand("openpush",row())

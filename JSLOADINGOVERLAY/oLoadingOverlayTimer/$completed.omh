@@ -1,0 +1,17 @@
+;  $completed() Method called when the request completes
+
+Do lList1.$define(lCol1,lCol2,lCol3,lCol4,lCol5)
+If iOverlayObj='DataGrid'|iOverlayObj='PagedPane'
+	For lCount from 1 to 100 step 1
+		Do lList1.$add(lCount,lCount,lCount,lCount,lCount)
+	End For
+End If
+
+Do lList2.$define(lList2Col)
+If iOverlayObj='ListControl'|iOverlayObj='PagedPane'
+	For lCount from 1 to 100 step 1
+		Do lList2.$add(con('Line ',lCount))
+	End For
+End If
+
+Do iCallingInst.$completed(lList1,lList2)

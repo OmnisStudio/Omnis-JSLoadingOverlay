@@ -1,0 +1,24 @@
+Do iObjects.$loadcols()
+
+If iMyCssClassname='<empty>'
+	Calculate lCssClassname as ''
+Else
+	Calculate lCssClassname as iMyCssClassname
+End If
+
+Calculate rowvariable as row(kTrue,iObjName,iMessage,lCssClassname)     ;; show overlay in selected control, ie. PagedPane, List Control or Datagrid
+
+Calculate iOverLayObj as iObjName
+Calculate iShowingOverlay as kTrue
+
+If iOverLayObj='DataGrid'|iOverLayObj='PagedPane'
+	Do iList1.$clear()
+End If
+
+If iOverLayObj='ListControl'|iOverLayObj='PagedPane'
+	Do iList2.$clear()
+	Do iList2.$add('ListControl')
+End If
+
+Do $cinst.$objs.Start.$text.$assign('Cancel')
+Do $cinst.$clientcommand("showloadingoverlay",rowvariable)

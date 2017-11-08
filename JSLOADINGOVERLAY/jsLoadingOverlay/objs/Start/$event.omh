@@ -1,0 +1,9 @@
+On evClick
+	If not(iShowingOverlay)
+		Do method showoverlay
+		Do iTimerObjRef.$setCallingInst($cinst,iOverLayObj)
+		Do iTimerObjRef.$starttimer()
+	Else
+		Do iTimerObjRef.$stoptimer()
+		Do method hideoverlay
+	End If
